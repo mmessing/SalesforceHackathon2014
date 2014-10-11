@@ -37,7 +37,7 @@ gem 'spring',        group: :development
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
+gem 'activesalesforce', '~> 1.1.6'
 gem 'pg'
 # group :development, :test do
 #   gem 'sqlite3'

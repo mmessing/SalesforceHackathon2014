@@ -21,6 +21,9 @@ GEM
       activemodel (= 4.1.4)
       activesupport (= 4.1.4)
       arel (~> 5.0.0)
+    activesalesforce (1.1.6)
+      builder (>= 1.2.4)
+      rails (>= 1.0.0)
     activesupport (4.1.4)
       i18n (~> 0.6, >= 0.6.9)
       json (~> 1.7, >= 1.7.7)
@@ -124,6 +127,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesalesforce (~> 1.1.6)
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails
