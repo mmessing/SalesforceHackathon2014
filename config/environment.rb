@@ -17,11 +17,11 @@ Rails.application.initialize!
       response = connection.request request
       status = response.code.to_i
 
-      if (200..201) === status
-        response.body
-      else
-        options[:on_error].call(status, response.body) if options[:on_error]
+      if !((200..201) === status) && options[:on_error]
+        options[:on_error].call(status, response.body)
       end
+
+      response.body
     end
   end
 end
