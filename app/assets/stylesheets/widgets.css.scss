@@ -2,26 +2,72 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@mixin out {
+  position: relative;
+  top: -1px;
+  box-shadow:
+    inset 0 1px 0 rgba(white, 0.75),
+    0 1px 2px rgba(black, 0.4),
+    inset 0 -1px 32px rgba(black, 0.1);
+}
+
+@mixin in {
+  top: 0px;
+  box-shadow:
+    inset 0 1px 5px rgba(black, 0.2),
+    inset 0 0 32px rgba(black, 0.2),
+    0 1px 0 rgba(white, 0.75);
+}
+
 button {
+  @include out;
   -webkit-appearance: none;
   width: 100%;
   max-width: 300px;
   padding: 10px 0;
   border: none;
   border-radius: 6px;
+  background: none;
   font-size: 1.2rem;
   font-weight: 200;
-  font-family: "Helvetica Neue";
+  font-family: 'Helvetica Neue';
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+
+  &:active {
+    @include in;
+  }
 }
 
 input[type='text'] {
+  @include in;
   width: 100%;
   max-width: 300px;
   padding: 10px 0;
   border: 0;
   font-size: 1.2rem;
   font-weight: 200;
-  font-family: "Helvetica Neue";
+  font-family: 'Helvetica Neue';
   text-align: center;
-  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  outline: none;
+}
+
+input[type='checkbox'] {
+  @include out;
+  -webkit-appearance: none;
+  max-width: 300px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 6px;
+  vertical-align: top;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+
+  &:checked {
+    @include in;
+  }
 }
