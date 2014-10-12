@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   get 'login' => 'users#login'
 
+  get 'profile' => 'users#show'
+
   # facebook login/logout
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'logout', to: 'sessions#destroy'

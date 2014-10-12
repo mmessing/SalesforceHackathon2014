@@ -25,5 +25,20 @@
   <%= @user.location %>
 </p>
 
+<p>
+  <% dogs = Dog.where("id = #{@user['id']}") %>
+  <% dogs.each do |dog| %>
+    <div>
+      Name:
+      <%= dog.name %>
+      Age:
+      <%= dog.age %>
+      Gender:
+      <%= dog.gender %>
+    </div>
+  <img class="dog-image" src="<%= dog.image %>" />
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
