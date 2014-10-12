@@ -29,8 +29,12 @@ ActiveRecord::Schema.define(version: 20141012035838) do
   end
 
   create_table "listings", force: true do |t|
+    t.string   "name"
+    t.string   "description"
     t.string   "start"
     t.string   "end"
+    t.float    "longitude"
+    t.float    "latitude"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -60,6 +64,11 @@ ActiveRecord::Schema.define(version: 20141012035838) do
     t.string   "email"
     t.string   "birthday"
     t.string   "location"
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "image"
+    t.string   "token"
+    t.string   "expires_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

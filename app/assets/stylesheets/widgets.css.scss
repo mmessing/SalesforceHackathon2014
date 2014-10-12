@@ -10,7 +10,7 @@ html {
 body {
   height: 100%;
   background: #f1f1f1;
-  font-family: 'Helvetica Neue';
+  font-family: 'Helvetica Neue', Arial;
   text-align: center;
   margin: 0;
   box-sizing: border-box;
@@ -30,7 +30,8 @@ h1 {
   border-bottom: 2px solid black;
 
   em {
-    color: rgba(black, 0.1);
+    font-style: normal;
+    color: rgba(black, 0.06);
   }
 }
 
@@ -48,7 +49,7 @@ h2 {
 @mixin text {
   font-size: 1.2rem;
   font-weight: 200;
-  font-family: 'Helvetica Neue';
+  font-family: 'Helvetica Neue', Arial;
 }
 
 @mixin out {
@@ -104,6 +105,7 @@ input[type='text'], input[type='password'] {
   max-width: 300px;
   padding: 10px 0;
   border: 0;
+  background: rgba(white, 0.5);
   text-align: center;
   margin: 5px 0;
   outline: none;
@@ -210,8 +212,10 @@ input[type='radio'] {
   position: absolute;
   top: -20px;
   right: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  line-height: 2.7rem;
   width: 40px;
+  height: 40px;
   max-width: none;
   padding: 0;
 
@@ -235,12 +239,12 @@ nav {
   height: 100%;
   padding: 10px 0;
   box-sizing: border-box;
-  transform: translateX(-100%);
+  transform: translate3d(-100%, 0, 0);
   transition: 0.3s transform;
   text-align: center;
 
-  &.open {
-    transform: translateX(0);
+  .menu-open & {
+    transform: translate3d(0, 0, 0);
   }
 
   a {

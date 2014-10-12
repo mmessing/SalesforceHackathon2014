@@ -3,8 +3,12 @@
 </form>
 
 <% @listings.each do |listing| %>
+  <%= listing.name %>
+  <%= listing.description %>
   <%= listing.start %>
   <%= listing.end %>
+  <%= listing.longitude %>
+  <%= listing.latitude %>
   <%= link_to 'Show', listing %>
   <%= link_to 'Edit', edit_listing_path(listing) %>
   <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %>

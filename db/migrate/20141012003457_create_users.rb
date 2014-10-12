@@ -7,6 +7,13 @@ class CreateUsers < ActiveRecord::Migration
       t.string :birthday
       t.string :location
 
+      t.string :provider
+      t.string :uid
+      t.string :name
+      t.string :image
+      t.string :token
+      t.string :expires_at
+
       t.timestamps
     end
   end
