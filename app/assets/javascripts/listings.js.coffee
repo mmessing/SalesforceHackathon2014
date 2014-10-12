@@ -21,8 +21,34 @@ $ -> new class Map
           position: new google.maps.LatLng(latitude, longitude)
 
         for i in [0..10]
-          new google.maps.Marker
+          new Barker
             map: @map
-            title: 'Me'
             position: new google.maps.LatLng(latitude + 0.02 * (Math.random() - 0.5), longitude + 0.02 * (Math.random() - 0.5))
-            icon: '/doge-pin.png'
+
+class Barker
+  constructor: ({map, position}) ->
+    @marker = new google.maps.Marker
+      map: map
+      position: position
+      title: 'Doge'
+      icon: '/doge-pin.png'
+
+    google.maps.event.addListener @marker, 'click', @open
+
+  open: (event) => new Doge {}
+
+class Doge
+  constructor: ({name}) ->
+    @el = $ '<div class="doge">'
+      .append """
+        <div class="close">&#215;</div>
+        <div class="name">
+          <img src="/doge-pin.png" />
+          #{name}
+        </div>
+      """
+      .on 'click', '.close', @close
+      .appendTo 'body'
+
+  close: =>
+    @el.remove()
