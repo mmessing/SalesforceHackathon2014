@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Image</th>
       <th>Name</th>
       <th>Age</th>
       <th>Breed</th>
@@ -14,6 +15,7 @@
   <tbody>
     <% @dogs.each do |dog| %>
       <tr>
+        <td><%= image_tag dog.image_url.to_s %>
         <td><%= dog.name %></td>
         <td><%= dog.age %></td>
         <td><%= dog.breed %></td>
