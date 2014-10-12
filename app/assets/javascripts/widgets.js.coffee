@@ -15,9 +15,9 @@ $ -> new class Nav
         if $('#nav-toggle.pushed')[0] then @close() else @open()
 
   open: ->
-    $('nav').addClass 'open'
+    $('body').addClass 'menu-open'
     $('#nav-toggle').addClass 'pushed'
 
   close: ->
-    $('nav').removeClass 'open'
+    $('body').removeClass 'menu-open'
     $('#nav-toggle').removeClass 'pushed'
