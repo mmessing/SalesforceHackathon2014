@@ -27,7 +27,9 @@
           <%= "#{name}" %>
         </a>
       <% end %>
-      <div id="users-name">Hello <%= @user['name'] %></div>
+      <% if @user %>
+        <div id="users-name">Hello <%= @user['name'] %></div>
+      <% end %>
     </nav>
 
     <header>
