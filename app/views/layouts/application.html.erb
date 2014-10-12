@@ -9,6 +9,8 @@
   <body>
     <nav>
       <%
+        login_out = @user == nil ? 'login' : 'logout'
+
         {
           'home' => nil,
           'search' => 'listings',
@@ -16,7 +18,7 @@
           'profile' => 'profile',
           'friends' => 'friends',
           'settings' => 'settings',
-          'logout' => 'logout'
+          login_out => login_out
         }.each do |name, link|
       %>
         <a
@@ -24,6 +26,9 @@
           class="<%= 'selected' if request.path == "/#{link}" %>">
           <%= "#{name}" %>
         </a>
+      <% end %>
+      <% if @user %>
+        <div id="users-name">Hello <%= @user['name'] %></div>
       <% end %>
     </nav>
 
@@ -33,7 +38,6 @@
         <button id='nav-toggle' title='wow'>&equiv;</button>
       </h1>
     </header>
-
     <%= yield %>
   </body>
 </html>
