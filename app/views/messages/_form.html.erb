@@ -14,9 +14,8 @@
   <div class="field">
     <%= f.hidden_field :user_id, :value => User.where(id: session[:user_id]).as_json[0]['id'] %>
   </div>
-  <div class="field">
-    <%= f.label :recipient_id %><br>
-    <%= f.number_field :recipient_id %>
+  <div class="field dropdown">
+    <%= f.collection_select :recipient_id, User.order(:name), :id, :name %>
   </div>
   <div class="field">
     <%= f.label :content %><br>

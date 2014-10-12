@@ -10,8 +10,11 @@ class MessageMailer < ActionMailer::Base
           subject: "New Doge Message")
   end
 
-  def message_email(user)
+  def message_email(user, message)
     require 'mail'
+    recipient = User.where("id = #{message.recipient_id}")
+    content = message["content"]
+
     options = { :address              => "smtp.gmail.com",
                 :port                 => 587,
                 :domain               => 'your.host.name',
@@ -27,8 +30,8 @@ class MessageMailer < ActionMailer::Base
     Mail.deliver do
            to user["email"]
          from 'dogeup@gmail.com'
-      subject 'testing sendmail'
-         body 'testing sendmail'
+      subject 'New Doge Message'
+         body content
     end
 
 

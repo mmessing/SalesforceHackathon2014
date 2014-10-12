@@ -21,6 +21,7 @@ class MessagesController < ApplicationController
   # GET /messages/new
   def new
     @message = Message.new
+    @users = User.all
   end
 
   # GET /messages/1/edit
@@ -43,7 +44,7 @@ class MessagesController < ApplicationController
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end
-    MessageMailer.message_email(user).deliver
+    MessageMailer.message_email(user,@message).deliver
   end
 
   # PATCH/PUT /messages/1
