@@ -30,7 +30,8 @@ h1 {
   border-bottom: 2px solid black;
 
   em {
-    color: rgba(black, 0.08);
+    font-style: normal;
+    color: rgba(black, 0.05);
   }
 }
 
@@ -104,6 +105,7 @@ input[type='text'], input[type='password'] {
   max-width: 300px;
   padding: 10px 0;
   border: 0;
+  background: rgba(white, 0.5);
   text-align: center;
   margin: 5px 0;
   outline: none;
