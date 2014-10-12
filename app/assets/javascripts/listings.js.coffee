@@ -19,3 +19,10 @@ $ -> new class Map
           map: @map
           title: 'Me'
           position: new google.maps.LatLng(latitude, longitude)
+
+        for i in [0..10]
+          new google.maps.Marker
+            map: @map
+            title: 'Me'
+            position: new google.maps.LatLng(latitude + 0.02 * (Math.random() - 0.5), longitude + 0.02 * (Math.random() - 0.5))
+            icon: '/doge-pin.png'
