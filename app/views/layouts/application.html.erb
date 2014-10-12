@@ -21,7 +21,8 @@
       %>
         <a
           href="<%= "/#{link}" %>"
-          class="<%= 'selected' if request.path == "/#{link}" %>">
+          class="<%= 'selected' if /([^\d]+)(\/\d+)?$/.match(request.path)[1] == "/#{link}" %>"
+        >
           <%= "#{name}" %>
         </a>
       <% end %>
