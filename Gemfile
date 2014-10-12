@@ -49,3 +49,4 @@ end
 
 gem 'tzinfo-data'
 gem 'certified'
+gem 'omniauth-facebook'

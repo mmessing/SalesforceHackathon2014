@@ -2,5 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ '#doge'
+  .on 'dragstart', (event) -> event.preventDefault()
   .on 'load', -> $('#doge').css 'opacity', '1'
   .attr 'src', $('#doge').attr 'data-src'
