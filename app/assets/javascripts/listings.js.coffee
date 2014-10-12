@@ -40,13 +40,13 @@ class Barker
   open: (event) => new Doge @data
 
 class Doge
-  constructor: ({name}) ->
+  constructor: ({id, name}) ->
     @el = $ '<div class="doge">'
       .append """
         <div class="close">&#215;</div>
         <div class="name">
           <img src="/doge-pin.png" />
-          #{name}
+          <a href="listings/#{id}">#{name}</a>
         </div>
       """
       .on 'click', '.close', @close
