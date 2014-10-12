@@ -6,11 +6,7 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    #When (current_user_id) is returnable:
-    #@messages = Message.where("recipient_id = session['user_id']")
-    #will only display received messages
-
-    @messages = Message.all
+    @messages = Message.where("recipient_id = #{User.where(id: session[:user_id]).as_json[0]['id']}")
   end
 
   # GET /messages/1
