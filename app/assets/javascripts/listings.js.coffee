@@ -26,4 +26,5 @@ $ -> new class Map
         .on 'pinch', @zoom
 
   zoom: (event) =>
+    event.preventDefault()
     @map.setZoom(@map.zoom * event.scale)
