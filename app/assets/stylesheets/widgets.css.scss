@@ -235,12 +235,12 @@ nav {
   height: 100%;
   padding: 10px 0;
   box-sizing: border-box;
-  transform: translateX(-100%);
+  transform: translate3d(-100%, 0, 0);
   transition: 0.3s transform;
   text-align: center;
 
   .menu-open & {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 
   a {
