@@ -20,22 +20,24 @@ $ -> new class Map
           title: 'Me'
           position: new google.maps.LatLng(latitude, longitude)
 
-        for i in [0..10]
-          new Barker
-            map: @map
-            position: new google.maps.LatLng(latitude + 0.04 * (Math.random() - 0.5), longitude + 0.04 * (Math.random() - 0.5))
+        $.ajax '/listings.json'
+          .done (responses) =>
+            for response in responses
+              new Barker
+                map: @map
+                data: response
 
 class Barker
-  constructor: ({map, position}) ->
+  constructor: ({map, @data}) ->
     @marker = new google.maps.Marker
       map: map
-      position: position
       title: 'Doge'
+      position: new google.maps.LatLng(@data.latitude, @data.longitude)
       icon: '/doge-pin.png'
 
     google.maps.event.addListener @marker, 'click', @open
 
-  open: (event) => new Doge {}
+  open: (event) => new Doge @data
 
 class Doge
   constructor: ({name}) ->
