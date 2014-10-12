@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :images
+
+  resources :places
+
+  resources :listings
+
+  resources :users
+
+  resources :dogs
+
   resources :widgets
 
   # The priority is based upon order of creation: first created -> highest priority.
