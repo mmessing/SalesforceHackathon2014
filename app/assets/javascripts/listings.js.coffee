@@ -23,7 +23,7 @@ $ -> new class Map
         for i in [0..10]
           new Barker
             map: @map
-            position: new google.maps.LatLng(latitude + 0.02 * (Math.random() - 0.5), longitude + 0.02 * (Math.random() - 0.5))
+            position: new google.maps.LatLng(latitude + 0.04 * (Math.random() - 0.5), longitude + 0.04 * (Math.random() - 0.5))
 
 class Barker
   constructor: ({map, position}) ->
