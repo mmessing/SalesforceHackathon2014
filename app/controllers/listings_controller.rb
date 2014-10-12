@@ -10,6 +10,9 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
+    @listing = Listing.find params[:id]
+    @user = User.find @listing.user_id
+    @image = @user.dogs[0].images[0]
   end
 
   # GET /listings/new
