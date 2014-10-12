@@ -4,7 +4,7 @@ class CreateWidgets < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.integer :stock
-
+      
       t.timestamps
     end
   end

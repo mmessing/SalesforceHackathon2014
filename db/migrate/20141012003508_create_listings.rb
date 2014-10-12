@@ -7,7 +7,7 @@ class CreateListings < ActiveRecord::Migration
       t.string :end
       t.float  :longitude
       t.float  :latitude
-
+      t.integer :user_id
 
       t.timestamps
     end

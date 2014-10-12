@@ -1,9 +1,15 @@
-<% if @user %>
-    <h1>New listing</h1>
-	<%= render 'form' %>
-	<%= link_to 'Back', listings_path %>
+<% if @user%>
+<% dogs = Dog.where("id = #{@user['id']}") %>
+	<% if dogs.size > 0%>
+    	<h2>New walk</h2>
+		<%= render 'form' %>
+		<%= link_to 'Back', listings_path %>
+	<% elsif dogs.size == 0%>
+		<a class="button" href="/dogs/new">Add a dog</a>
+	<% end %>
 <% else %>
-    <a href="/auth/facebook">Login <img src="https://www.teenytinywebsites.com/s/facebook_f_icon_50.png" /></a>
+    <div id="login">
+  		<a class="button" id="facebook-login" href="/auth/facebook">Login with Facebook</a>
+	</div>
+
 <% end %>
-
-
