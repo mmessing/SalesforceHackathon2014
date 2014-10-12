@@ -1,6 +1,8 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
 
+  require 'mail'
+
   # GET /messages
   # GET /messages.json
   def index
@@ -29,6 +31,8 @@ class MessagesController < ApplicationController
   # POST /messages.json
   def create
     @message = Message.new(message_params)
+    user = User.where(id: session[:user_id]).as_json[0]
+
 
     respond_to do |format|
       if @message.save
@@ -39,6 +43,7 @@ class MessagesController < ApplicationController
         format.json { render json: @message.errors, status: :unprocessable_entity }
       end
     end
+    MessageMailer.message_email(user).deliver
   end
 
   # PATCH/PUT /messages/1
