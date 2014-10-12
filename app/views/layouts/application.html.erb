@@ -9,16 +9,13 @@
   <body>
     <nav>
       <%
-        login_out = @user == nil ? 'login' : 'logout'
-
         {
           'home' => nil,
           'search' => 'listings',
           'host' => 'listings/new',
           'profile' => 'profile',
           'friends' => 'friends',
-          'settings' => 'settings',
-          login_out => login_out
+          'settings' => 'settings'
         }.each do |name, link|
       %>
         <a
@@ -28,7 +25,10 @@
         </a>
       <% end %>
       <% if @user %>
+        <a href="logout">Logout</a>
         <div id="users-name">Hello <%= @user['name'] %></div>
+      <% else %>
+        <a href="/auth/facebook">Login <img src="https://www.teenytinywebsites.com/s/facebook_f_icon_50.png" /></a>
       <% end %>
     </nav>
 
