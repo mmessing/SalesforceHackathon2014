@@ -6,6 +6,21 @@
     <link rel="stylesheet" href="/assets/application.css" />
   </head>
   <body>
+    <nav>
+    <%
+      [
+        nil, 'profile', 'settings', 'places',
+        'appointments', 'friends', 'logout'
+      ].each do |link|
+    %>
+      <a
+        href="<%= "/#{link}" %>"
+        class="<%= 'selected' if request.path == "/#{link}" %>">
+        <%= "#{link || 'home'}" %>
+      </a>
+    <% end %>
+  </nav>
+
     <%= yield %>
   </body>
 </html>

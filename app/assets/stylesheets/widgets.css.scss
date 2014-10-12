@@ -201,6 +201,12 @@ nav {
     display: block;
     padding: 10px 0;
     text-decoration: none;
+
+    &.selected {
+      color: white;
+      background: black;
+      font-weight: bold;
+    }
   }
 }
 

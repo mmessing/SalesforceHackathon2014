@@ -5,12 +5,13 @@ $ -> new class Nav
   constructor: ->
     $ 'html'
       .hammer()
+      .on 'tap', @close
       .on 'swiperight', @open
       .on 'swipeleft', @close
 
     $ '#nav-toggle'
-      .on 'click', =>
-        console.log 'push'
+      .on 'mouseup', (event) -> event.stopPropagation()
+      .on 'click', (event) =>
         if $('#nav-toggle.pushed')[0] then @close() else @open()
 
   open: ->
