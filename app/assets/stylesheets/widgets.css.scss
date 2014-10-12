@@ -27,7 +27,6 @@
 }
 
 form {
-  line-height: 3.5rem;
   text-align: center;
 }
 
@@ -42,7 +41,7 @@ button, input[type='button'], input[type='submit'] {
   border: none;
   border-radius: 6px;
   background: none;
-  margin: 0;
+  margin: 5px 0;
   outline: none;
   cursor: pointer;
 
@@ -60,7 +59,7 @@ input[type='text'], input[type='password'] {
   padding: 10px 0;
   border: 0;
   text-align: center;
-  margin: 0;
+  margin: 5px 0;
   outline: none;
 }
 
@@ -72,7 +71,7 @@ input[type='checkbox'] {
   height: 44px;
   border: 0;
   border-radius: 6px;
-  margin: 0;
+  margin: 5px 0;
   outline: none;
   cursor: pointer;
 
@@ -88,7 +87,7 @@ input[type='radio'] {
   width: 28px;
   height: 28px;
   border-radius: 100%;
-  margin: 8px;
+  margin: 13px 8px;
   outline: none;
   cursor: pointer;
 
@@ -103,6 +102,7 @@ input[type='radio'] {
   line-height: 1rem;
   width: 100%;
   max-width: 300px;
+  margin: 5px 0;
 
   select {
     @include out;
@@ -110,7 +110,7 @@ input[type='radio'] {
     vertical-align: middle;
     -webkit-appearance: none;
     width: 100%;
-    padding: 10px 20px;
+    padding: 10px 15px;
     border: 0;
     margin: 0;
     outline: none;
@@ -137,12 +137,21 @@ input[type='radio'] {
 }
 
 .list {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1rem;
+  width: 100%;
+  max-width: 300px;
+  margin: 5px 0;
+
   select {
     @include in;
     @include text;
     width: 100%;
-    max-width: 300px;
     border: none;
+    margin: 0;
+    padding: 5px;
     outline: none;
 
     option {
