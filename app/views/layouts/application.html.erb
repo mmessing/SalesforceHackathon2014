@@ -8,15 +8,20 @@
   <body>
     <nav>
       <%
-        [
-          nil, 'profile', 'settings', 'places',
-          'appointments', 'friends', 'logout'
-        ].each do |link|
+        {
+          'home' => nil,
+          'search' => 'listings',
+          'host' => 'listings/new',
+          'profile' => 'profile',
+          'friends' => 'friends',
+          'settings' => 'settings',
+          'logout' => 'logout'
+        }.each do |name, link|
       %>
         <a
           href="<%= "/#{link}" %>"
           class="<%= 'selected' if request.path == "/#{link}" %>">
-          <%= "#{link || 'home'}" %>
+          <%= "#{name}" %>
         </a>
       <% end %>
     </nav>
@@ -24,7 +29,7 @@
     <header>
       <h1>
         Up Dog<em>e</em>
-        <button id='nav-toggle'>&equiv;</button>
+        <button id='nav-toggle' title='wow'>&equiv;</button>
       </h1>
     </header>
 
