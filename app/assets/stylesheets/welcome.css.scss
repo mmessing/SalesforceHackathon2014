@@ -8,9 +8,16 @@
 
 #doge {
   opacity: 0;
-  transition: opacity 2s 1.5s;
+  transition: opacity 2s 1s, transform 1s;
   margin-top: 10px;
   max-width: 300px;
   width: 100%;
   height: 384px;
+}
+
+.menu-open {
+  #doge {
+    transition: transform 1s 1s;
+    transform: translateX(100px)
+  }
 }

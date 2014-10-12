@@ -239,7 +239,7 @@ nav {
   transition: 0.3s transform;
   text-align: center;
 
-  &.open {
+  .menu-open & {
     transform: translateX(0);
   }
 
