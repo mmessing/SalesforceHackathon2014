@@ -48,6 +48,8 @@ ActiveRecord::Schema.define(version: 20141012095352) do
     t.datetime "updated_at"
   end
 
+  add_index "messages", ["user_id", "created_at"], name: "index_messages_on_user_id_and_created_at"
+
   create_table "places", force: true do |t|
     t.string   "name"
     t.float    "longitude"

@@ -4,6 +4,10 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
+    #When (current_user_id) is returnable:
+    #@messages = Message.where("recipient_id = (current_user_id)")
+    #will only display received messages
+
     @messages = Message.all
   end
 
