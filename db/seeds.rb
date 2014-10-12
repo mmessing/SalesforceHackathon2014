@@ -17,7 +17,7 @@ dog4 = Dog.create(name: 'daDoge', age:'.1', breed:'Sheba Enu', gender:'unisex', 
 
 message1 = Message.create(user_id: user1.id, recipient_id: user2.id, content: 'hey whats up doge?')
 message2 = Message.create(user_id: user2.id, recipient_id: user1.id, content: 'nm whats up doge?')
-message3 = Message.create(user_id: user1.id, recipient_id: user2.id, content: 'i'm a white doge')
+message3 = Message.create(user_id: user1.id, recipient_id: user2.id, content: 'im a white doge')
 
 #SF listings
 listing = Listing.create(name: 'San Francisco', description: "City Walk", start: "16:30", end: "17:30", longitude: '-122.4199106434927', latitude: '37.80082026868395', user_id: user1.id )
