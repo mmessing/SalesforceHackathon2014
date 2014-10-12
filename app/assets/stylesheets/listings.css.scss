@@ -3,8 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 form {
   position: relative;
-  margin-top: 20px;
-  z-index: 1
+  margin: 20px 0 10px 0;
+  z-index: 1;
+  pointer-events: none;
+
+  input {
+    pointer-events: auto;
+  }
 }
 
 #map {
@@ -24,6 +29,7 @@ form {
 
   &:before {
     content: '';
+    pointer-events: none;
     position: absolute;
     z-index: 1;
     top: 0;
