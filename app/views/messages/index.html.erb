@@ -12,9 +12,11 @@
 
   <tbody>
     <% @messages.each do |message| %>
+      <% users = User.where("id = #{message.recipient_id}") %>
+      <% recipient = users[0].name %>
       <tr>
-        <td><%= message.user_id %></td>
-        <td><%= message.recipient_id %></td>
+        <td><%= message.user.name %></td>
+        <td><%= recipient %></td>
         <td><%= message.content %></td>
         <td><%= link_to 'Show', message %></td>
         <td><%= link_to 'Edit', edit_message_path(message) %></td>
