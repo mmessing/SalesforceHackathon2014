@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141012003523) do
+ActiveRecord::Schema.define(version: 20141012094948) do
 
   create_table "dogs", force: true do |t|
     t.string   "name"
@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(version: 20141012003523) do
     t.string   "end"
     t.float    "longitude"
     t.float    "latitude"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "messages", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "recipient_id"
+    t.string   "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
