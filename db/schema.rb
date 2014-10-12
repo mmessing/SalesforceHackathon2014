@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20141012003523) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "dogs", force: true do |t|
     t.string   "name"
     t.integer  "age"
@@ -32,8 +29,12 @@ ActiveRecord::Schema.define(version: 20141012003523) do
   end
 
   create_table "listings", force: true do |t|
+    t.string   "name"
+    t.string   "description"
     t.string   "start"
     t.string   "end"
+    t.float    "longitude"
+    t.float    "latitude"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

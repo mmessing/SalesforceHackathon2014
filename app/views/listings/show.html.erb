@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Name:</strong>
+  <%= @listing.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @listing.description %>
+</p>
+
+<p>
   <strong>Start:</strong>
   <%= @listing.start %>
 </p>
@@ -8,6 +18,16 @@
 <p>
   <strong>End:</strong>
   <%= @listing.end %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @listing.longitude %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @listing.latitude %>
 </p>
 
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
